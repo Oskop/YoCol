@@ -38,3 +38,7 @@ K nearest neighbors is a simple algorithm that stores all available cases and cl
   <img src="https://user-images.githubusercontent.com/22610163/34918895-c7b94d24-f96b-11e7-87da-8619d9bd4246.png">
 </p>
 
+## Dependencies
+Some dependencies that make YoCol work : 
+- For inference
+  
