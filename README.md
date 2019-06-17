@@ -11,7 +11,7 @@ As you can see, YOLO v3 is object detection that can detecting object from given
 In this implementation, i decide to add 196 classes of given dataset (car make and model) to pretrained weights file that can recognize 80 classes from COCO dataset. Before passing train images to YOLO, i labeling again the train images that have width upper than 300 pixel
 
 ### Color Classifier
-This color classifier focus on classify ten color that commonly used in a car. The color consist of black, blue, brown, gray, green, red, silver, white, and yellow. Color are classified by using K-Neares Neşghbor Machine Learning classifier algorithm. This classifier is trained by image R, G, B Color Histogram values. The general work flow is given at the below.
+This color classifier focus on classify ten color that commonly used in a car. The color consist of black, blue, orange, green, red, violet, white, and yellow. Color are classified by using K-Neares Neşghbor Machine Learning classifier algorithm. This classifier is trained by image R, G, B Color Histogram values. The general work flow is given at the below.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/22610163/35335133-a9632c70-0125-11e8-9204-0b4bfd0702a7.png" {width=35px height=350px}>
