@@ -1,16 +1,16 @@
 # YoCol
 Implementation of YOLOv3 with opencv and color classifier with KNN based on color histogram in python 3.
-
+---
 
 ## Introduction
 To response the challenge of recognizing car make, model, and color from aiforsea.com, i propose method using YOLO v3 to detect car make and model, then croping object from image based on bounding box and passing it into color classifier. This repository implement darknet from [YOLO v3 repository](https://github.com/pjreddie/darknet) to train the model, and color classifier from [color-classifier](https://github.com/ahmetozlu/color_classifier) to classify its color. For detection, i use opencv to read the configuration and weights files, forwarding image to model, and get the bounding box of the object. This implementation is used python programming language for inference and C programming languange for darknet (training process)
 
-## YOLO v3 Object Detection
+### YOLO v3 Object Detection
 As you can see, YOLO v3 is object detection that can detecting object from given image with one stage scanning process over the image. It split a given image into grid and perform Convolution for each of grid to extract the features and classify object. Ouput from this network is coordinate of bounding box of detected object.
 
 In this implementation, i decide to add 196 classes of given dataset (car make and model) to pretrained weights file that can recognize 80 classes from COCO dataset. Before passing train images to YOLO, i labeling again the train images that have width upper than 300 pixel
 
-## Color Classifier
+### Color Classifier
 This color classifier focus on classify ten color that commonly used in a car. The color consist of black, blue, brown, gray, green, red, silver, white, and yellow. Color are classified by using K-Neares Neşghbor Machine Learning classifier algorithm. This classifier is trained by image R, G, B Color Histogram values. The general work flow is given at the below.
 
 <p align="center">
@@ -34,7 +34,7 @@ K nearest neighbors is a simple algorithm that stores all available cases and cl
 <p align="center">
   <img src="https://user-images.githubusercontent.com/22610163/34918895-c7b94d24-f96b-11e7-87da-8619d9bd4246.png">
 </p>
-
+---
 ## Dependencies
 Some dependencies that make YoCol work : 
 - For inference, because we use OpenCV to read YOLOv3, we aren't use CUDA or CuDNN
@@ -73,9 +73,14 @@ without arguments:
 
 ## Training
 ### For Object Detection
-To train object detection model, you can use .ipynb file and run on Colab. All configuration is settled in that file.
+To train object detection model, you can use .ipynb file and run on Colab. All configuration is settled in that file. If you want to train the model with your own dataset, follow the instruction from [YOLO-Annotation-Tool-New](https://medium.com/@manivannan_data/yolo-annotation-tool-new-18c7847a2186) written by [Manivannan Murugavel](https://medium.com/@manivannan_data) for labelling. Then pass your own dataset to Google Colab
+
 ### For Color Classifier
-To train color classifier, just put color images in ```data/color_dataset/<color>``` with name format <ColornameNumber> (ex. blue17.jpg) with number start from last number in <color> directory
+To train color classifier, just put color images in "data/color_training_dataset/\<color\>" with name format "ColornameNumber" (ex. blue17.jpg) with number start from last number in <color> directory. Then run this command :
+```Shell
+  python train_color.py
+```
+it will create \<training.data\> to "data" directory
 
 ## Evaluation
 Will be available as soon as possible
