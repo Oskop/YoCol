@@ -8,7 +8,7 @@ To response the challenge of recognizing car make, model, and color from aiforse
 ### YOLO v3 Object Detection
 As you can see, YOLO v3 is object detection that can detecting object from given image with one stage scanning process over the image. It split a given image into grid and perform Convolution for each of grid to extract the features and classify object. Ouput from this network is coordinate of bounding box of detected object.
 
-In this implementation, i decide to add 196 classes of given dataset (car make and model) to pretrained weights file that can recognize 80 classes from COCO dataset. Before passing train images to YOLO, i labeling again the train images that have width upper than 300 pixel
+In this implementation, i decide to add 196 classes of given dataset (car make and model) to pretrained weights file that can recognize 80 classes from COCO dataset. Before passing train images to YOLO, i labeling again the train images that have width upper than 300 pixel on 80 COCO class names and saved into data.json file in "data" directory.
 
 ### Color Classifier
 This color classifier focus on classify 8 color. The color consist of black, blue, orange, green, red, violet, white, and yellow. Color are classified by using K-Neares Neşghbor Machine Learning classifier algorithm. This classifier is trained by image R, G, B Color Histogram values. The general work flow is given at the below.
