@@ -93,6 +93,17 @@ optional arguments:
 without arguments:
   it will use your webcam as input
 ```
+Since there's still no weights file, you can do inference with [YOLOv3 official weights](https://pjreddie.com/media/files/yolov3.weights)
+```Shell
+$ wget https://pjreddie.com/media/files/yolov3.weights -C data
+# For image detection
+python yocol.py --image=path_to_image_file
+# For video detection
+python yocol.py --video=path_to_video_file
+# For webcam
+python yocol.py
+# Press "q" to quit the webcam input mode
+```
 ---
 
 ## Training
@@ -104,7 +115,7 @@ To train color classifier, just put color images in "data/color_training_dataset
 ```Shell
 $ python train_color.py
 ```
-it will create \<training.data\> to "data" directory
+it will create or replace \<training.data\> in "data" directory
 
 ## Evaluation
 Will be available as soon as possible
