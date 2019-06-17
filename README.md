@@ -53,7 +53,29 @@ $ pip install -r requirement.txt
 ```
 The directories of this repository will be like :
 ```Shell
-$ Tree
+   YoCol
+   |-darknet
+   |---cfg
+   |---data
+   |-----labels
+   |---examples
+   |---include
+   |---python
+   |---scripts
+   |---src
+   |-data
+   |---color_training_dataset
+   |-----black
+   |-----blue
+   |-----green
+   |-----orange
+   |-----red
+   |-----violet
+   |-----white
+   |-----yellow
+   |-utils
+   |---color_recognition_api
+   |-----__pycache__
 ```
 ---
 
@@ -73,12 +95,12 @@ without arguments:
 
 ## Training
 ### For Object Detection
-To train object detection model, you can use .ipynb file and run on Colab. All configuration is settled in that file. If you want to train the model with your own dataset, follow the instruction from [YOLO-Annotation-Tool-New](https://medium.com/@manivannan_data/yolo-annotation-tool-new-18c7847a2186) written by [Manivannan Murugavel](https://medium.com/@manivannan_data) for labelling. Then pass your own dataset to Google Colab
+To train object detection model, you can use .ipynb file and run on Colab. All configuration is settled in that file. If you want to train the model with your own dataset, follow the instruction from [YOLO-Annotation-Tool-New](https://medium.com/@manivannan_data/yolo-annotation-tool-new-18c7847a2186) written by [Manivannan Murugavel](https://medium.com/@manivannan_data) for labelling.
 
 ### For Color Classifier
 To train color classifier, just put color images in "data/color_training_dataset/\<color\>" with name format "ColornameNumber" (ex. blue17.jpg) with number start from last number in <color> directory. Then run this command :
 ```Shell
-  python train_color.py
+$ python train_color.py
 ```
 it will create \<training.data\> to "data" directory
 
